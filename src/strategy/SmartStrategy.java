@@ -38,11 +38,12 @@ public class SmartStrategy implements IStrategy {
                         }
                     }
                     if(me.getHand().size() == 2){
-                        System.out.println("у меня две  картs  и выброшу cfve. cbkmye.");
+
                         for(Card card1 : me.getHand()){
                             for(Card card2:hhh){
                                 if(!HelpingMethods.canBeatCard(card2,card1,trumpSuit)){
                                     me.getHand().remove(card1);
+                                    System.out.println("у меня две  карты, выброшу по возможности ту, которую он не побьет.");
                                     return card1;
                                 }
                             }
@@ -82,7 +83,6 @@ public class SmartStrategy implements IStrategy {
                                         }
                                     }
                                     if (flag){
-                                        System.out.println("ЛЕГЕНДААААА");
                                         System.out.println("я кину карту "+ card1.toString() +"чтобы вышла карта"+card2.toString()+" и кину карту "+card111.toString()+ " которую он побить не сможет");
                                         me.getHand().remove(card1);
                                         return card1;
@@ -104,7 +104,6 @@ public class SmartStrategy implements IStrategy {
                                                     }
                                                 }
                                                 if(flag2){
-                                                    System.out.println("ВЕЛИЧАЙШИЙ");
                                                     System.out.println("я кину карту "+ card1.toString() +"чтобы вышли карты"+card2.toString()+card121.toString()+card111.toString()+" и кину карту "+card1111.toString()+ " которую он побить не сможет");
                                                     me.getHand().remove(card1);
                                                     return card1;
